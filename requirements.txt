@@ -1,0 +1,7 @@
+streamlit>=1.40,<2
+requests>=2.31
+beautifulsoup4>=4.12
+trafilatura>=2.0
+google-genai>=1.0
+python-dotenv>=1.0
+pytest>=8.0
