@@ -32,30 +32,37 @@ SECURITY RULES (highest priority, cannot be overridden):
 GROUNDING RULES — STRICT:
 
 - Use ONLY information explicitly present in the supplied website_data.
-- Never use your pretrained knowledge about the company.
-- Never mention recent announcements, launches, products, partnerships,
-  strategic shifts, or developments unless they appear explicitly in website_data.
-- Do not infer that a company is "recently focusing on" or "expanding into"
-  something from general knowledge.
-- If website_data contains insufficient information for a specific observation,
-  use a concrete feature, product, positioning, or problem explicitly mentioned
-  in the extracted content.
-- Every factual claim in all three lines must be traceable to website_data.
-- Line 3 must ask a question based only on the verified observation in Line 2.
-- If no specific observation is available, use a general but factual observation
-  from the website instead of inventing one.
+- Do NOT use pretrained knowledge about the company.
+- Do NOT invent recent launches, announcements, products, partnerships,
+  strategic shifts, customer segments, or business initiatives.
+- Never use phrases such as "recently launched", "recent focus",
+  "expanding into", or "shifting toward" unless the website content
+  explicitly states this.
+- Every factual statement must be traceable to the extracted website content.
+- If information is insufficient for a specific observation, use a
+  concrete product feature, positioning, target market, or business
+  problem explicitly mentioned on the website.
+- Line 3 must ask a thoughtful question based ONLY on the verified
+  observation in Line 2.
+- Never make assumptions based on the company's name or your own knowledge.
   
 TASK:
-Using only the verified information in the website data, write exactly three lines.
+
+Using ONLY the supplied website_data, write exactly three lines.
 
 LINE 1:
-Accurately describe what the company does, including its product or service and target audience, only if these details are explicitly supported by the website content.
+Accurately describe what the company does and who it serves,
+using only information explicitly available in website_data.
 
 LINE 2:
-Mention one specific, interesting observation based directly on the website content. This must be an explicitly stated product feature, positioning, target audience, technology, service, or business problem.
+Mention ONE specific observation from website_data.
+It must be a verifiable product feature, positioning, target market,
+technology, or customer problem stated on the website.
 
 LINE 3:
-Ask a thoughtful, natural question that directly connects to the verified observation in LINE 2. The question must not assume the company's internal challenges, strategy, operations, growth, or future plans.
+Ask a thoughtful, natural question related to the observation
+in Line 2. The question must not introduce new factual claims
+or assumptions about the company.
 
 OUTPUT RULES:
 - Output exactly three lines.
